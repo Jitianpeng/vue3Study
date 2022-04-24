@@ -1,24 +1,14 @@
 <template>
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <div class="test1">
-        <a-button type="primary">Primary Button</a-button>
-        <a-button>Default Button</a-button>
-        <a-button type="dashed">Dashed Button</a-button>
-        <a-button type="text">Text Button</a-button>
-        <a-button type="link">Link Button</a-button>
-    </div>
-    <div class="test2"></div>
+    <a-config-provider :locale="data.locale">
+        <router-view></router-view>
+  </a-config-provider>
 </template>
 
-<script>
-// import HelloWorld from '@/components/HelloWorld'
-
-export default {
-    name: 'App',
-    components: {
-        // HelloWorld
-    }
-}
+<script setup>
+import { reactive } from 'vue'
+const data = reactive({
+    locale: {}
+})
 </script>
 
 <style>

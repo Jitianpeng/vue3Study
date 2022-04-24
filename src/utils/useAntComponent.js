@@ -2,7 +2,8 @@ import {
   Button,
   Input,
   message,
-  Select
+  Select,
+  ConfigProvider
 } from 'ant-design-vue'
 
 export const useAntComponent = app => {
@@ -10,4 +11,5 @@ export const useAntComponent = app => {
     app.use(Button)
     app.use(Input)
     app.use(Select)
+    app.use(ConfigProvider)
 }

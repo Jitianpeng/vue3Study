@@ -11,6 +11,6 @@ export const mainRouter = {
     root: {
         path: '/',
         name: 'root',
-        direct: '/login'
+        redirect: '/login'
     }
 }

@@ -3,7 +3,8 @@ import {
   Input,
   message,
   Select,
-  ConfigProvider
+  ConfigProvider,
+  Form,
 } from 'ant-design-vue'
 
 export const useAntComponent = app => {
@@ -12,4 +13,5 @@ export const useAntComponent = app => {
     app.use(Input)
     app.use(Select)
     app.use(ConfigProvider)
+    app.use(Form)
 }

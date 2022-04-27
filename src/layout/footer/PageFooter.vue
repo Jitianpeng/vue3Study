@@ -8,8 +8,7 @@
                 target="_blank"
             >{{ item.title }}
             <span class="separator">|</span>
-            <!-- <component :is="data[item.icon]"></component> -->
-            <github-outlined />
+            <component :is="item.icon"></component>
         </a>
         </div>
         <div class="bottom">
@@ -22,13 +21,12 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
-import { GithubOutlined } from '@ant-design/icons-vue'
 const data = reactive({
     footerlinks: [
         {
             link: 'https://github.com/Jitianpeng',
             title: '天月飞鸟',
-            icon: 'github'
+            icon: 'github-outlined'
         }
     ],
     github: ref('github-outlined')
@@ -39,6 +37,7 @@ const data = reactive({
 .footer{
     padding: 48px 16px 24px;
     /*margin: 48px 0 24px;*/
+    background-color: rgba(237, 181, 128, .8);
     text-align: center;
     .linkList{
         margin-bottom: 8px;

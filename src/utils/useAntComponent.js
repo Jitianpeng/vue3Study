@@ -1,10 +1,10 @@
 import {
-  Button,
-  Input,
-  message,
-  Select,
-  ConfigProvider,
-  Form,
+    Button,
+    Input,
+    message,
+    Select,
+    ConfigProvider,
+    Form,
 } from 'ant-design-vue'
 
 export const useAntComponent = app => {

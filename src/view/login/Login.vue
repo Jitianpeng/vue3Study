@@ -15,7 +15,7 @@
                         <a-input placeholder="admin" v-model:value="formState.userName"></a-input>
                     </a-form-item>
                     <a-form-item name="password">
-                        <a-input-password placeholder="111666" v-model:value="formState.password" />
+                        <a-input-password placeholder="jtp111666" v-model:value="formState.password" />
                     </a-form-item>
                     <a-form-item>
                         <a-button
@@ -34,7 +34,8 @@
 
 <script setup>
 import PageFooter from '@/layout/footer/PageFooter'
-import { message } from 'ant-design-vue';
+import { Login } from '@/service/login'
+import { message } from 'ant-design-vue'
 import { reactive, computed } from 'vue'
 const formState = reactive({
     userName: '',
@@ -52,12 +53,14 @@ const rules = reactive({
 const disabled = computed(() => !(formState.userName && formState.password))
 
 // 登陆
-const handleLogin = ({ userName, password }) => {
-    if(userName === 'admin' && password === '111666') {
-        message.success('登陆成功')
-    } else {
-        message.error('账户密码不存在')
-    }
+const handleLogin = (value) => {
+    Login(value).then(res => {
+        if(res.data.code === 0) {
+            message.error(res.data.message)
+        } else {
+            message.error(res.data.message)
+        }
+    })
 }
 
 </script>

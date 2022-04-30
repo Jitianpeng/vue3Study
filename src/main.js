@@ -3,7 +3,7 @@ import App from './App.vue'
 import { initRouter } from '@/router'
 import { useAntComponent } from '@/utils/useAntComponent'
 import {  useAntIcon } from '@/utils/useAntIcon'
-
+import '@/mock'
 // 创建vue全局实例
 const app = createApp(App)
 
@@ -17,5 +17,5 @@ useAntComponent(app)
 useAntIcon(app)
 
 app
-.use(router)
-.mount('#app')
+    .use(router)
+    .mount('#app')

@@ -28,14 +28,6 @@ module.exports = {
         "space-before-function-paren": 0,
         "eol-last": 0,
         "no-useless-escape": "off",
-        // "max-len": [
-        //     2,
-        //     200,
-        //     4,
-        //     {
-        //         "ignoreUrls": true
-        //     }
-        // ],
         "prefer-const": [
             "warn",
             {
@@ -43,6 +35,6 @@ module.exports = {
                 "ignoreReadBeforeAssign": false
             }
         ],
-        // "guard-for-in": "warn"
+        "guard-for-in": "warn"
     }
 }

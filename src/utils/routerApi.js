@@ -64,7 +64,6 @@ function parseRoutes(routesConfig) {
             meta: {
                 ...routerMeta,
                 authority: routerMeta.authority || '*',
-                title: routeConfig.title || router.title
             }
         }
 

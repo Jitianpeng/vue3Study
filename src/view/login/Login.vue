@@ -15,7 +15,7 @@
                         <a-input placeholder="admin" v-model:value="formState.userName"></a-input>
                     </a-form-item>
                     <a-form-item name="password">
-                        <a-input-password placeholder="jtp111666" v-model:value="formState.password" />
+                        <a-input-password placeholder="jtp111" v-model:value="formState.password" />
                     </a-form-item>
                     <a-form-item>
                         <a-button
@@ -37,9 +37,12 @@ import PageFooter from '@/layout/footer/PageFooter'
 import { Login } from '@/service/login'
 import { message } from 'ant-design-vue'
 import { reactive, computed } from 'vue'
+import { useRouter } from 'vue-router'
+
+const _router = useRouter()
 const formState = reactive({
-    userName: '',
-    password: ''
+    userName: 'admin',
+    password: 'jtp111'
 })
 const rules = reactive({
     userName: [
@@ -56,7 +59,8 @@ const disabled = computed(() => !(formState.userName && formState.password))
 const handleLogin = (value) => {
     Login(value).then(res => {
         if(res.data.code === 0) {
-            message.error(res.data.message)
+            message.success(res.data.message)
+            _router.push('/dashboard/workplace')
         } else {
             message.error(res.data.message)
         }

@@ -4,6 +4,22 @@ import { parseRoutes } from "@/utils/routerApi"
 const asyncConfig = [
     'login',
     'root',
+    {
+        router: 'root',
+        path: '/',
+        children: [
+            {
+                router: 'dashboard',
+                path: 'dashboard',
+                children: [
+                    {
+                        path: 'workplace',
+                        router: 'workplace'
+                    }
+                ]
+            }
+        ]
+    }
 ]
 
 const options = {

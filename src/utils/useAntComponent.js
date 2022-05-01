@@ -5,6 +5,7 @@ import {
     Select,
     ConfigProvider,
     Form,
+    Layout
 } from 'ant-design-vue'
 
 export const useAntComponent = app => {
@@ -14,4 +15,5 @@ export const useAntComponent = app => {
     app.use(Select)
     app.use(ConfigProvider)
     app.use(Form)
+    app.use(Layout)
 }

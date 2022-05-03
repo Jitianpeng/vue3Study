@@ -12,10 +12,18 @@
                     :rules="rules"
                 >
                     <a-form-item name="userName">
-                        <a-input placeholder="admin" v-model:value="formState.userName"></a-input>
+                        <a-input placeholder="admin" v-model:value="formState.userName">
+                            <template #prefix>
+                                <UserOutlined />
+                            </template>
+                        </a-input>
                     </a-form-item>
                     <a-form-item name="password">
-                        <a-input-password placeholder="jtp111" v-model:value="formState.password" />
+                        <a-input-password placeholder="jtp111" v-model:value="formState.password">
+                            <template #prefix>
+                                <LockOutlined />
+                            </template>
+                        </a-input-password>
                     </a-form-item>
                     <a-form-item>
                         <a-button
@@ -87,6 +95,7 @@ const handleLogin = (value) => {
 
         .top {
             padding: 20px 0;
+            text-align: center;
         }
         .login {
             width: 368px;

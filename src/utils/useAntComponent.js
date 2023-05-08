@@ -7,7 +7,7 @@ import {
     Form,
     Layout,
     Dropdown,
-    Menu
+    Menu,
 } from 'ant-design-vue'
 
 export const useAntComponent = app => {

@@ -1,8 +1,8 @@
 <template>
-      <a-layout class="adminLayout">
+    <a-layout class="adminLayout">
         <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
-        <div class="logo" />
-        <!-- <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
+            <div class="logo" />
+            <!-- <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
             <a-menu-item key="1">
             <user-outlined />
             <span>nav 1</span>
@@ -18,11 +18,11 @@
         </a-menu> -->
         </a-layout-sider>
         <a-layout>
-            <AdminHeader :collapsed="collapsed" @change="handleChange"/>
+            <AdminHeader :collapsed="collapsed" @change="handleChange" />
             <a-layout-content
                 :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
             >
-                <router-view></router-view>
+                <router-view />
             </a-layout-content>
         </a-layout>
     </a-layout>

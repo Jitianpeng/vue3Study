@@ -12,11 +12,11 @@ module.exports = defineConfig({
     },
     css: {
         loaderOptions: {
-        less: {
-            lessOptions: {
-            javascriptEnabled: true
+            less: {
+                lessOptions: {
+                    javascriptEnabled: true
+                }
             }
-        }
         }
     }
 })

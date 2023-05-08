@@ -3,7 +3,9 @@ import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
     UserOutlined,
-    LockOutlined
+    LockOutlined,
+    SettingOutlined,
+    PoweroffOutlined
 } from '@ant-design/icons-vue'
 
 const IconList = {
@@ -12,6 +14,8 @@ const IconList = {
     'MenuUnfoldOutlined': MenuUnfoldOutlined,
     'UserOutlined': UserOutlined,
     'LockOutlined': LockOutlined,
+    'SettingOutlined': SettingOutlined,
+    'PoweroffOutlined': PoweroffOutlined,
 }
 
 export const useAntIcon = app => {

@@ -4,12 +4,12 @@
             <div class="top">
                 <h1>vue3学习</h1>
             </div>
-            <div class="login" >
+            <div class="login">
                 <a-form
                     :model="formState"
                     autocomplete="off"
-                    @finish="handleLogin"
                     :rules="rules"
+                    @finish="handleLogin"
                 >
                     <a-form-item name="userName">
                         <a-input placeholder="admin" v-model:value="formState.userName">

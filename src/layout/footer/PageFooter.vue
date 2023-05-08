@@ -7,9 +7,9 @@
                 :href="item.link ? item.link : 'javascript: void(0)'"
                 target="_blank"
             >{{ item.title }}
-            <span class="separator">|</span>
-            <component :is="item.icon"></component>
-        </a>
+                <span class="separator">|</span>
+                <component :is="item.icon"></component>
+            </a>
         </div>
         <div class="bottom">
             <a href="https://v3.cn.vuejs.org/guide/introduction.html">

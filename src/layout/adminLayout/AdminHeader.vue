@@ -15,21 +15,21 @@
                 <a-dropdown>
                     <div class="header-avatar" style="cursor: pointer">
                         <!-- <a-avatar class="avatar" size="small" shape="circle" :src="user.avatar"/> -->
-                        <span class="name">{{'天月飞鸟'}}</span>
+                        <span class="name">{{ '天月飞鸟' }}</span>
                     </div>
                     <template #overlay>
                         <a-menu :class="['avatar-menu']">
                             <a-menu-item>
-                                <a-icon type="user" />
+                                <user-outlined style="margin-right: 8px;" />
                                 <span>个人中心</span>
                             </a-menu-item>
                             <a-menu-item>
-                                <a-icon type="setting" />
+                                <setting-outlined style="margin-right: 8px;" />
                                 <span>设置</span>
                             </a-menu-item>
                             <a-menu-divider />
                             <a-menu-item @click="logout">
-                                <a-icon style="margin-right: 8px;" type="poweroff" />
+                                <poweroff-outlined style="margin-right: 8px;" />
                                 <span>退出登录</span>
                             </a-menu-item>
                         </a-menu>
@@ -41,7 +41,6 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue'
 const emits = defineEmits(['change'])
 const props = defineProps(['collapsed'])
 const handeChange = () => {

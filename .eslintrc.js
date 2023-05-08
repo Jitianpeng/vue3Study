@@ -23,7 +23,7 @@ module.exports = {
             "never"
         ],
         "indent": [ // 缩进
-            "warn",
+            "error",
             4
         ],
         "space-before-function-paren": 0,
@@ -36,6 +36,14 @@ module.exports = {
                 "ignoreReadBeforeAssign": false
             }
         ],
-        "guard-for-in": "warn"
+        "guard-for-in": "warn",
+        // vue 配置
+        "vue/max-attributes-per-line": 0, // 第一个属性换行
+        "vue/html-indent": [1, 4], // vue html部分缩进
+        "vue/require-prop-types": 0, // vue 组件接收的组件是否必须定义类型
+        "vue/html-self-closing": 0, // vue 空标签是否要求必须 单标签关闭
+        "vue/attributes-order": [0], // 强制属性顺序
+        "vue/multiline-html-element-content-newline": [0], // 需要在多行元素的内容前后换行
+        "vue/attribute-hyphenation": [0], // vue/属性连字符
     }
 }

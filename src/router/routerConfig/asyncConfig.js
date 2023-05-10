@@ -25,5 +25,5 @@ const asyncConfig = [
 const options = {
     routes: parseRoutes(asyncConfig)
 }
-
+console.log(options, 'options--')
 export default options

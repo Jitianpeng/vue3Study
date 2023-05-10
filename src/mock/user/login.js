@@ -1,38 +1,31 @@
 import Mock from 'mockjs'
 
+// 允许登录的账号
 const userList = [
-    {
-        userName: 'admin',
-        password: 'jtp111'
-    },
-    {
-        userName: 'test',
-        password: 'test'
-    }
+    { account: 'admin', password: 'jtp111', userName: '天月双鸟飞' },
+    { account: 'test', password: 'test', userName: '测试人员' }
 ]
 Mock.mock(`${process.env.VUE_APP_API_BASE_URL}/user/login`, 'post', ({ body }) => {
     const result = {
         data: {}
     }
-    const {userName, password} = JSON.parse(body)
-    const acceptAccount = {userName, password}
-
+    const {account, password} = JSON.parse(body)
     let success = false
-    if (userList.find(item => JSON.stringify(item) === JSON.stringify(acceptAccount))) {
+    const target = userList.find(item => item.account === account && item.password === password )
+    if (target) {
         success = true
         result.data.permissions = [{id: 'queryForm', operation: ['add', 'edit']}]
-        result.data.roles = [{id: userName, operation: ['add', 'edit', 'delete']}]
-    }else {
-        success = false
+        result.data.roles = [{id: account, operation: ['add', 'edit', 'delete']}]
     }
 
     if (success) {
         result.code = 0
-        result.message = userName + '，欢迎回来'
+        result.message = account + '，欢迎回来'
         result.data.user = {
-            userName,
+            account,
+            userName: target.userName,
             avatar: 'https://gw.alipayobjects.com/zos/rmsportal/cnrhVkzwxjPwAaCfPbdc.png',
-            address: '',
+            address: '大明湖畔',
             position: '前端工程师 | VUE平台'
         }
         result.data.token = 'Authorization:' + Math.random()

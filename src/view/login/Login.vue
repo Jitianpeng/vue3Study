@@ -2,7 +2,7 @@
     <div class="pageLogin">
         <div class="content">
             <div class="top">
-                <h1>vue3学习</h1>
+                <h1>vue3自定义通用组件</h1>
             </div>
             <div class="login">
                 <a-form
@@ -11,8 +11,8 @@
                     :rules="rules"
                     @finish="handleLogin"
                 >
-                    <a-form-item name="userName">
-                        <a-input placeholder="admin" v-model:value="formState.userName">
+                    <a-form-item name="account">
+                        <a-input placeholder="admin" v-model:value="formState.account">
                             <template #prefix>
                                 <UserOutlined />
                             </template>
@@ -49,11 +49,11 @@ import { useRouter } from 'vue-router'
 
 const _router = useRouter()
 const formState = reactive({
-    userName: 'admin',
+    account: 'admin',
     password: 'jtp111'
 })
 const rules = reactive({
-    userName: [
+    account: [
         {required: true, message: '请输入用户名', trigger: 'change'}
     ],
     password: [
@@ -61,7 +61,7 @@ const rules = reactive({
     ]
 })
 
-const disabled = computed(() => !(formState.userName && formState.password))
+const disabled = computed(() => !(formState.account && formState.password))
 
 // 登陆
 const handleLogin = (value) => {
@@ -74,6 +74,8 @@ const handleLogin = (value) => {
         }
     })
 }
+
+// 登录后处理
 
 </script>
 
